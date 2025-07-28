@@ -29,22 +29,22 @@
         xkeyval
       ]);
     in rec {
-      packages.resume = pkgs.stdenvNoCC.mkDerivation rec {
+      packages.resume-pdf = pkgs.stdenvNoCC.mkDerivation rec {
         name = "latex-resume";
         src = self;
         buildInputs = [ pkgs.coreutils tex ];
         phases = [ "unpackPhase" "buildPhase" ];
         buildPhase = ''
             env HOME=$(mktemp -d) \
-            latexmk -interaction=nonstopmode -pdf -lualatex -cd -output-directory=$out \
-            src/main.tex
+            latexmk -interaction=nonstopmode -pdf -lualatex -cd \
+            -output-directory=$out -jobname=resume src/main.tex
         '';
       };
-      defaultPackage = packages.resume;
+      defaultPackage = packages.resume-pdf;
 
       devShells.default = pkgs.mkShell {
         name = "resume-shell";
-        inputsFrom = [ packages.resume ];
+        inputsFrom = [ packages.resume-pdf ];
       };
     });
 }
