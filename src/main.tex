@@ -1,0 +1,107 @@
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons 
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper]{altacv}
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% 
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font 
+%% folder.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+
+% If using xelatex or lualatex:
+% \setmainfont{Lato}
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+
+\usepackage[colorlinks]{hyperref}
+
+\begin{document}
+
+\name{William McKinnon}
+\tagline{SOFTWARE DEVELOPMENT ENGINEER}
+\personalinfo{
+  \email{contact@willmckinnon.com}
+  \phone{226-971-3543}
+  \github{github.com/willpower3309}
+  \linkedin{linkedin.com/in/william-mckinnon}
+  \homepage{willmckinnon.com}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+\begin{fullwidth}
+    \makecvheader
+    Toronto based Software Development Engineer experienced in building highly available data-intensive applications across a variety of tech stacks. Seeking a role in an innovative and challenging environment, building world-changing products.
+\end{fullwidth}
+
+% EXPERIENCE
+\cvsection[sidebar]{Experience}
+
+\cvevent{Amazon Web Services}{Toronto, Ontario}{SDE II}{December 2024 -- Present}
+\vspace{-0.25em}
+\textbf{\color{accent}SDE I}
+\hfill\small\faCalendar\hspace{0.5em}June 2022 -- December 2024
+\normalsize
+\medskip
+\begin{itemize}
+    \item Contributed to the development and successful launch of Amazon Aurora Limitless, a next-generation horizontally scalable database offering.
+    \item Designed and implemented the database endpoint, a critical component that intelligently routes client connections to healthy database nodes, ensuring high availability and reliability.
+    \item Integrated Aurora Limitless into the AWS system test framework, enabling automated validation of core functionality across distributed environments.
+    \item Identified and resolved numerous bugs prior to launch through rigorous test automation, significantly improving system stability and accelerating delivery timelines.
+\end{itemize}
+
+\divider
+
+\cvevent{Vidyard}{Kitchener, Ontario}{Software Developer Intern}{April 2021 -- December 2021}
+\begin{itemize}
+    \item Collaborated with the sales development team to improve the Vidyard website, the Chrome extension, and the video player, while ensuring quality and stability for end users.
+    \item Developed and improved user-facing features using JavaScript and TypeScript within the ReactJS and VueJS frameworks, contributing to both new development and existing codebase maintenance.
+    \item Built and maintained end-to-end (E2E) tests using Cypress, improving test coverage and reducing regression risk across key components of the Vidyard platform.
+    \item Delivered reliable, high-quality features and strengthened product stability through robust E2E test suites, directly supporting a better customer experience and increased development confidence.
+\end{itemize}
+
+\divider
+
+\cvevent{Cognitive Systems Corp.}{Waterloo, Ontario}{Software Developer Intern}{January 2020 -- August 2020}
+\begin{itemize}
+    \item Contributed to both the testing and iOS development teams for the company's flagship product, WifiMotion, with responsibilities spanning mobile app development, QA automation, and backend load testing.
+    \item Developed new features and enhancements for the iOS application using Swift and xcode, collaborating with the app team to deliver a reliable user experience.
+    \item Added automated test cases to the QA pipeline using Python and the Pytest framework, improving test coverage and regression detection.
+    \item Designed and implemented a custom load testing service using the Locust framework to assess the performance limits of backend services, from scratch through deployment.
+    \item Successfully performed multiple load tests, identified performance bottlenecks, and provided a fully documented and maintainable load testing solution. Delivered stable code contributions and QA tests, enhancing product quality and backend resilience.
+\end{itemize}
+
+\end{document}
+
