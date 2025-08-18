@@ -13,12 +13,14 @@ jobs:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
     - run: nix flake check
     - run: nix build
+    - run: cp result/resume.pdf .
+    - run: sudo apt install -y poppler-utils; pdftoppm -png -singlefile resume.pdf resume 
 
     - uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: result/resume.pdf
-        asset_name: resume.pdf
+        file: resume.*
+        file_glob: true
         tag: release
         overwrite: true
         body: "Latest version of William McKinnon's resume"
