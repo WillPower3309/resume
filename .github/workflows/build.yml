@@ -2,7 +2,9 @@ name: build resume
 
 on:
   push:
-
+    paths:
+      - src/**
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
