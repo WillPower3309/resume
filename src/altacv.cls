@@ -93,7 +93,6 @@
 
 \newcommand{\cvevent}[4]{
   {\large\color{emphasis}#1}
-  \smallskip\normalsize
   \ifstrequal{#2}{}{}{{\hfill\small\faMapMarker\hspace{0.5em}#2}}
   \par
   \ifstrequal{#3}{}{}{\textbf{\color{accent}#3}}
@@ -112,7 +111,14 @@
 }
 
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep=0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+}
+
+\newcommand{\cvproject}[2]{
+  {\large\color{emphasis}#1}
+  \ifstrequal{#2}{}{}{{\hfill\small\faCalendar\hspace{0.5em}#2}}
+  \par
+  \medskip
 }
 
 % v1.1.2: make it easier to add a sidebar aligned with top of next page
